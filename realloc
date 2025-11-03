@@ -1,0 +1,11 @@
+[12:37 PM, 11/3/2025] Nl: #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int p = (int) malloc(2 * sizeof(int));
+    p[0] = 1; p[1] = 2;
+    p = (int*) realloc(p, 4 * sizeof(int));
+    p[2] = 3; p[3] = 4;
+    printf("%d %d %d %d", p[0], p[1], p[2], p[3]);
+    free(p);
+}
